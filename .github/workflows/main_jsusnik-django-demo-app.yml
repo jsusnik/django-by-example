@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'jsusnik-django-demo-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_44CDFB5539D549198C3375835033AE55 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FDC0681F9CB54C73A9BA1E1C0FCA377E }}
