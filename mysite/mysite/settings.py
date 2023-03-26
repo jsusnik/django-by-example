@@ -27,8 +27,10 @@ SECRET_KEY = "django-insecure-wq6z4)w4sq03byx@h9s$g6k=ht-)_-r&^#bng)ky&ml-0@05n8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://jsusnik-django-demo-app.azurewebsites.net/']
 
+if 'CODESPACE_NAME' in os.environ:
+    CSRF_TRUSTED_ORIGINS = [f'https://{os.getenv("CODESPACE_NAME")}-8000.{os.getenv("GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN")}']
 
 # Application definition
 
