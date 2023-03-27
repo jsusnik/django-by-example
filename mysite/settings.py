@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     
+    # Local
     "blog.apps.BlogConfig",
+    
+    # Third party
+    "taggit",
 ]
 
 MIDDLEWARE = [
