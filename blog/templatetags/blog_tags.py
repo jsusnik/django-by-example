@@ -1,8 +1,15 @@
 from django import template
 from ..models import Post
 from django.db.models import Count
+from django.utils.safestring import mark_safe
+import markdown
 
 register = template.Library()
+
+# page 113
+@register.filter(name='markdown')
+def markdown_format(text):
+    return mark_safe(markdown.markdown(text))
 
 # page 111
 @register.simple_tag

@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 if 'CODESPACE_NAME' in os.environ:
     CSRF_TRUSTED_ORIGINS = [f'https://{os.getenv("CODESPACE_NAME")}-8000.{os.getenv("GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN")}']
 
+SITE_ID = 1
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,12 +42,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites", # page 119
+    "django.contrib.sitemaps", # page 119
     
     # Local
     "blog.apps.BlogConfig",
     
     # Third party
-    "taggit",
+    "taggit", # page 91
 ]
 
 MIDDLEWARE = [

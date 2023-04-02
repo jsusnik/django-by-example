@@ -8,6 +8,7 @@ from django.core.mail import send_mail
 from django.views.decorators.http import require_POST
 from taggit.models import Tag
 
+# page 69
 def post_share(request, post_id):
     # Retrieve post by id
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
@@ -34,7 +35,6 @@ def post_share(request, post_id):
                                                     'form': form,
                                                     'sent': sent})
 
-
 # class PostListView(ListView):
 #     """
 #     Alternative post list view
@@ -43,7 +43,6 @@ def post_share(request, post_id):
 #     context_object_name = 'posts'
 #     paginate_by = 3
 #     template_name = 'blog/post/list.html'
-
 
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post,
@@ -69,6 +68,7 @@ def post_detail(request, year, month, day, post):
                    'form': form,
                    'similar_posts': similar_posts,})
 
+
 def post_list(request, tag_slug=None):
     post_list = Post.published.all()
     tag = None
@@ -90,7 +90,8 @@ def post_list(request, tag_slug=None):
                   'blog/post/list.html', 
                   {'posts': posts,
                    'tag': tag},)
-    
+
+# page 79 
 @require_POST
 def post_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
